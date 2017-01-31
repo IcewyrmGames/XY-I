@@ -13,19 +13,22 @@ namespace Anima2D
 	{
 		[SerializeField][FormerlySerializedAs("spriteMesh")]
 		SpriteMesh m_SpriteMesh;
-		
+
+		[SerializeField]
+		Sprite m_SpriteOverride;
+
 		[SerializeField]
 		Color m_Color = Color.white;
-		
+
 		[SerializeField]
 		Material[] m_Materials;
-		
+
 		[SerializeField]
 		int m_SortingLayerID = 0;
-		
+
 		[SerializeField][FormerlySerializedAs("orderInLayer")]
 		int m_SortingOrder = 0;
-		
+
 		[SerializeField][HideInInspector][FormerlySerializedAs("bones")]
 		Bone2D[] m_Bones;
 
@@ -36,7 +39,12 @@ namespace Anima2D
 			get { return m_SpriteMesh; }
 			set { m_SpriteMesh = value; }
 		}
-		
+
+		public Sprite spriteOverride {
+			get { return m_SpriteOverride; }
+			set { m_SpriteOverride = value; }
+		}
+
 		public Material sharedMaterial {
 			get {
 				if(m_Materials.Length > 0)
@@ -49,17 +57,17 @@ namespace Anima2D
 				m_Materials = new Material[] { value };
 			}
 		}
-		
+
 		public Material[] sharedMaterials {
 			get { return m_Materials; }
 			set { m_Materials = value; }
 		}
-		
+
 		public Color color {
 			get { return m_Color; }
 			set { m_Color = value; }
 		}
-		
+
 		public int sortingLayerID {
 			get { return m_SortingLayerID; }
 			set { m_SortingLayerID = value; }
@@ -150,7 +158,7 @@ namespace Anima2D
 				}
 			}
 		}
-		
+
 		MaterialPropertyBlock m_MaterialPropertyBlock;
 		MaterialPropertyBlock materialPropertyBlock {
 			get {
@@ -158,11 +166,11 @@ namespace Anima2D
 				{
 					m_MaterialPropertyBlock = new MaterialPropertyBlock();
 				}
-				
+
 				return m_MaterialPropertyBlock;
 			}
 		}
-		
+
 		Renderer mCachedRenderer;
 		public Renderer cachedRenderer {
 			get {
@@ -170,11 +178,11 @@ namespace Anima2D
 				{
 					mCachedRenderer = GetComponent<Renderer>();
 				}
-				
+
 				return mCachedRenderer;
 			}
 		}
-		
+
 		MeshFilter mCachedMeshFilter;
 		public MeshFilter cachedMeshFilter {
 			get {
@@ -182,11 +190,11 @@ namespace Anima2D
 				{
 					mCachedMeshFilter = GetComponent<MeshFilter>();
 				}
-				
+
 				return mCachedMeshFilter;
 			}
 		}
-		
+
 		SkinnedMeshRenderer mCachedSkinnedRenderer;
 		public SkinnedMeshRenderer cachedSkinnedRenderer {
 			get {
@@ -194,22 +202,24 @@ namespace Anima2D
 				{
 					mCachedSkinnedRenderer = GetComponent<SkinnedMeshRenderer>();
 				}
-				
+
 				return mCachedSkinnedRenderer;
 			}
 		}
-		
+
 		Texture2D spriteTexture {
 			get {
+				if(m_SpriteOverride) return m_SpriteOverride.texture;
+
 				if(spriteMesh && spriteMesh.sprite)
 				{
 					return spriteMesh.sprite.texture;
 				}
-				
+
 				return null;
 			}
 		}
-		
+
 		Mesh m_InitialMesh = null;
 		Mesh m_CurrentMesh = null;
 
@@ -219,7 +229,7 @@ namespace Anima2D
 				{
 					return m_InitialMesh;
 				}
-				
+
 				return null;
 			}
 		}
@@ -255,7 +265,7 @@ namespace Anima2D
 #endif
 			}
 		}
-	
+
 #if UNITY_EDITOR
 		void UpdateTimestamp()
 		{
@@ -343,7 +353,7 @@ namespace Anima2D
 					m_CurrentMesh.Clear();
 				}
 			}
-			
+
 			if(m_CurrentMesh)
 			{
 				if(spriteMesh && spriteMesh.sprite && spriteMesh.sprite.packed)
@@ -377,7 +387,7 @@ namespace Anima2D
 
 			if(m_InitialMesh)
 			{
-				l_mesh = m_CurrentMesh;	
+				l_mesh = m_CurrentMesh;
 			}
 
 			if(cachedSkinnedRenderer)
@@ -406,7 +416,7 @@ namespace Anima2D
 					UpdateCurrentMesh();
 				}
 			}
-#endif	
+#endif
 		}
 
 		void OnWillRenderObject()
@@ -417,7 +427,7 @@ namespace Anima2D
 			{
 				cachedRenderer.sortingLayerID = sortingLayerID;
 				cachedRenderer.sortingOrder = sortingOrder;
-				
+
 				if(m_Materials != null && m_Materials.Length > 0)
 				{
 					cachedRenderer.sharedMaterials = m_Materials;
@@ -425,7 +435,7 @@ namespace Anima2D
 				{
 					cachedRenderer.sharedMaterials = spriteMesh.sharedMaterials;
 				}
-				
+
 				if(materialPropertyBlock != null)
 				{
 					if(spriteTexture)
@@ -434,7 +444,7 @@ namespace Anima2D
 					}
 
 					materialPropertyBlock.SetColor("_Color",color);
-					
+
 					cachedRenderer.SetPropertyBlock(materialPropertyBlock);
 				}
 			}

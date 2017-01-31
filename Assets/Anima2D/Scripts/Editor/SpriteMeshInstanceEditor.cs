@@ -19,6 +19,7 @@ namespace Anima2D
 		SerializedProperty m_SortingOrder;
 		SerializedProperty m_SortingLayerID;
 		SerializedProperty m_SpriteMeshProperty;
+		SerializedProperty m_SpriteOverrideProperty;
 		SerializedProperty m_ColorProperty;
 		SerializedProperty m_MaterialsProperty;
 		SerializedProperty m_BonesProperty;
@@ -32,6 +33,7 @@ namespace Anima2D
 			m_SortingOrder = serializedObject.FindProperty("m_SortingOrder");
 			m_SortingLayerID = serializedObject.FindProperty("m_SortingLayerID");
 			m_SpriteMeshProperty = serializedObject.FindProperty("m_SpriteMesh");
+			m_SpriteOverrideProperty = serializedObject.FindProperty("m_SpriteOverride");
 			m_ColorProperty = serializedObject.FindProperty("m_Color");
 			m_MaterialsProperty = serializedObject.FindProperty("m_Materials.Array");
 			m_BonesProperty = serializedObject.FindProperty("m_Bones.Array");
@@ -57,7 +59,7 @@ namespace Anima2D
 			SetupBoneList();
 
 #if UNITY_5_5_OR_NEWER
-			
+
 #else
 			EditorUtility.SetSelectedWireframeHidden(m_SpriteMeshInstance.cachedRenderer, !m_SpriteMeshInstance.cachedSkinnedRenderer);
 #endif
@@ -79,14 +81,14 @@ namespace Anima2D
 			if(Selection.transforms.Length == 1 && m_BoneTransformsProperty.arraySize == 0 && m_BonesProperty.arraySize > 0)
 			{
 				serializedObject.Update();
-				
+
 				m_BoneTransformsProperty.arraySize = m_BonesProperty.arraySize;
-				
+
 				for(int i = 0; i < m_BonesProperty.arraySize; ++i)
 				{
 					SerializedProperty boneElement = m_BonesProperty.GetArrayElementAtIndex(i);
 					SerializedProperty transformElement = m_BoneTransformsProperty.GetArrayElementAtIndex(i);
-					
+
 					if(boneElement.objectReferenceValue)
 					{
 						Bone2D bone = boneElement.objectReferenceValue as Bone2D;
@@ -115,7 +117,7 @@ namespace Anima2D
 		bool HasBindPoses()
 		{
 			bool hasBindPoses = false;
-			
+
 			if(m_SpriteMeshData && m_SpriteMeshData.bindPoses != null && m_SpriteMeshData.bindPoses.Length > 0)
 			{
 				hasBindPoses = true;
@@ -139,7 +141,7 @@ namespace Anima2D
 					SerializedProperty element = m_BoneTransformsProperty.GetArrayElementAtIndex(i);
 					element.objectReferenceValue = null;
 				}
-				
+
 				serializedObject.ApplyModifiedProperties();
 			}
 
@@ -173,7 +175,7 @@ namespace Anima2D
 				}
 			};
 
-			mBoneList.drawHeaderCallback = (Rect rect) => {  
+			mBoneList.drawHeaderCallback = (Rect rect) => {
 				EditorGUI.LabelField(rect, "Bones");
 			};
 
@@ -195,6 +197,8 @@ namespace Anima2D
 
 			EditorGUILayout.PropertyField(m_SpriteMeshProperty);
 
+			EditorGUILayout.PropertyField(m_SpriteOverrideProperty);
+
 			serializedObject.ApplyModifiedProperties();
 
 			if(EditorGUI.EndChangeCheck())
@@ -213,9 +217,9 @@ namespace Anima2D
 				m_MaterialsProperty.InsertArrayElementAtIndex(0);
 			}
 			EditorGUILayout.PropertyField(m_MaterialsProperty.GetArrayElementAtIndex(0), new GUIContent("Material"), true, new GUILayoutOption[0]);
-			
+
 			EditorGUILayout.Space();
-			
+
 			EditorGUIExtra.SortingLayerField(new GUIContent("Sorting Layer"), m_SortingLayerID, EditorStyles.popup, EditorStyles.label);
 			EditorGUILayout.PropertyField(m_SortingOrder, new GUIContent("Order in Layer"));
 
@@ -269,7 +273,7 @@ namespace Anima2D
 				{
 					EditorGUILayout.HelpBox("Warning:\nBone list contains null references.", MessageType.Warning);
 				}
-				
+
 				if(m_SpriteMeshInstance.spriteMesh.sharedMesh.bindposes.Length != m_SpriteMeshInstance.bones.Count)
 				{
 					EditorGUILayout.HelpBox("Warning:\nNumber of SpriteMesh Bind Poses and number of Bones does not match.", MessageType.Warning);
@@ -281,7 +285,7 @@ namespace Anima2D
 		void UpdateSpriteMeshData()
 		{
 			m_SpriteMeshData = null;
-			
+
 			if(m_SpriteMeshProperty != null && m_SpriteMeshProperty.objectReferenceValue)
 			{
 				m_SpriteMeshData = SpriteMeshUtils.LoadSpriteMeshData(m_SpriteMeshProperty.objectReferenceValue as SpriteMesh);
