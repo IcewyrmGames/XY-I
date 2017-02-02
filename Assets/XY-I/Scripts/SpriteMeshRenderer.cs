@@ -5,7 +5,19 @@ using Anima2D;
 [RequireComponent( typeof( SkinnedMeshRenderer ) )]
 public class SpriteMeshRenderer : MonoBehaviour
 {
-	[SerializeField, HideInInspector] SkinnedMeshRenderer _meshRenderer;
+	[SerializeField] int _sortingLayerID = 0;
+	[SerializeField] int _sortingOrder = 0;
+
+	[SerializeField] SpriteMesh _spriteMesh;
+	public SpriteMesh spriteMesh {
+		get {return _spriteMesh;}
+		set {_spriteMesh = value;}
+	}
+
+	[SerializeField] Color _color = Color.white;
+	[SerializeField] Transform[] _bones = new Transform[0];
+
+	SkinnedMeshRenderer _meshRenderer;
 	public SkinnedMeshRenderer meshRenderer {
 		get {
 			if( !_meshRenderer )
@@ -15,18 +27,6 @@ public class SpriteMeshRenderer : MonoBehaviour
 			return _meshRenderer;
 		}
 	}
-
-	[SerializeField] SpriteMesh _spriteMesh;
-	public SpriteMesh spriteMesh {
-		get {return _spriteMesh;}
-		set {_spriteMesh = value;}
-	}
-
-	[SerializeField] Transform[] _bones;
-
-	[SerializeField] Color color = Color.white;
-	[SerializeField] int sortingLayerID = 0;
-	[SerializeField] int sortingOrder = 0;
 
 	MaterialPropertyBlock _materialProperties;
 	public MaterialPropertyBlock materialProperties {
@@ -45,7 +45,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 		if( oldInstance )
 		{
 			spriteMesh = oldInstance.spriteMesh;
-			color = oldInstance.color;
+			_color = oldInstance.color;
 
 			_bones = new Transform[oldInstance.bones.Count];
 			for( int i = 0; i < oldInstance.bones.Count; ++i )
@@ -53,8 +53,8 @@ public class SpriteMeshRenderer : MonoBehaviour
 				_bones[i] = oldInstance.bones[i].transform;
 			}
 
-			sortingLayerID = oldInstance.sortingLayerID;
-			sortingOrder = oldInstance.sortingOrder;
+			_sortingLayerID = oldInstance.sortingLayerID;
+			_sortingOrder = oldInstance.sortingOrder;
 
 			DestroyImmediate( oldInstance );
 		}
@@ -64,10 +64,10 @@ public class SpriteMeshRenderer : MonoBehaviour
 	{
 		if( spriteMesh && meshRenderer && materialProperties != null )
 		{
-			meshRenderer.sortingLayerID = sortingLayerID;
-			meshRenderer.sortingOrder = sortingOrder;
+			meshRenderer.sortingLayerID = _sortingLayerID;
+			meshRenderer.sortingOrder = _sortingOrder;
 
-			materialProperties.SetColor( "_Color", color );
+			materialProperties.SetColor( "_Color", _color );
 			meshRenderer.SetPropertyBlock( materialProperties );
 		}
 	}
