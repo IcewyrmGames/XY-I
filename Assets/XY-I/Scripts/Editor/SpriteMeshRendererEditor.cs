@@ -49,7 +49,7 @@ public class SpriteMeshRendererEditor : Editor
 			EditorGUI.LabelField( rect, "Bones" );
 		};
 
-		if( spriteMesh.objectReferenceValue != null )
+		if( spriteMesh.objectReferenceValue != null && !EditorApplication.isPlayingOrWillChangePlaymode )
 		{
 			UpdateSpriteMeshData();
 			UpdateBoneCount();
@@ -65,7 +65,7 @@ public class SpriteMeshRendererEditor : Editor
 
 		EditorGUILayout.PropertyField( spriteMesh );
 
-		if( EditorGUI.EndChangeCheck() )
+		if( EditorGUI.EndChangeCheck() && !EditorApplication.isPlayingOrWillChangePlaymode )
 		{
 			if( spriteMesh.objectReferenceValue != null )
 			{
@@ -76,7 +76,9 @@ public class SpriteMeshRendererEditor : Editor
 
 		EditorGUILayout.PropertyField( color );
 
+		EditorGUI.BeginDisabledGroup( EditorApplication.isPlayingOrWillChangePlaymode );
 		boneList.DoLayoutList();
+		EditorGUI.EndDisabledGroup();
 
 		EditorGUIExtra.SortingLayerField(
 			new GUIContent("Sorting Layer"),
