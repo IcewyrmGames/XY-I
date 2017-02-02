@@ -11,9 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb408ccf3ef4431494ed5d001e55c0b, type: 3}
   m_Name: TestOutfit 1
   m_EditorClassIdentifier: 
-  outfitSlot: {fileID: 11400000, guid: 718f70542c50f4c43ab986b9fbea99e9, type: 2}
-  spriteOverrides:
-  - spriteSlot: {fileID: 11400000, guid: 2d967b2c2c41e439991c5fedd60286ec, type: 2}
-    sprite: {fileID: 21300028, guid: dd105a39e474c4706aba36b8be4febd9, type: 3}
-  - spriteSlot: {fileID: 11400000, guid: b2ff6253220fe443297e46cf2896df14, type: 2}
-    sprite: {fileID: 21300004, guid: dd105a39e474c4706aba36b8be4febd9, type: 3}
+  slot: {fileID: 0}
+  bodyOverrides: []
+  decalOverrides: []

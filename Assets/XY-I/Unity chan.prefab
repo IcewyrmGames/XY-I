@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 114634758974523406}
   - component: {fileID: 114508212137501586}
   - component: {fileID: 95414824952212438}
+  - component: {fileID: 114232870573030684}
+  - component: {fileID: 114897757319341622}
   m_Layer: 0
   m_Name: Unity chan
   m_TagString: Untagged
@@ -3452,6 +3454,21 @@ MonoBehaviour:
   colliders: []
   threshold: 0.01
   isAnimated: 0
+--- !u!114 &114232870573030684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043515948816194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9ce78383838445f8d428b286e61088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parts: []
+  _decals: []
+  _defaultBodyData: []
+  _defaultDecalData: []
 --- !u!114 &114235085956108022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4350,32 +4367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fc50df0fc5b4b968a73718ea584282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpriteMeshInstances:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_SpriteMeshInstances: []
 --- !u!114 &114643777227106948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4873,6 +4865,19 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4826819699876990}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114897757319341622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043515948816194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbec382a6d19425fb244043d2c5885e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotManager: {fileID: 114232870573030684}
+  _outfits: []
 --- !u!114 &114906908581239492
 MonoBehaviour:
   m_ObjectHideFlags: 1
