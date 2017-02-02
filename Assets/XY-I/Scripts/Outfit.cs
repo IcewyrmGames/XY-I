@@ -5,14 +5,8 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class Outfit : ScriptableObject
 {
-	[System.Serializable]
-	public struct SpriteOverride
-	{
-		public SpriteSlot spriteSlot;
-		public Sprite sprite;
-	}
+	public OutfitSlot slot;
 
-	public OutfitSlot outfitSlot;
-
-	public List<SpriteOverride> spriteOverrides;
+	public BodySlotData[] bodyOverrides = new BodySlotData[0];
+	public DecalSlotData[] decalOverrides = new DecalSlotData[0];
 }

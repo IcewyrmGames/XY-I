@@ -15,6 +15,11 @@ public class SpriteMeshRenderer : MonoBehaviour
 	}
 
 	[SerializeField] Color _color = Color.white;
+	public Color color {
+		get {return _color;}
+		set {_color = value;}
+	}
+
 	[SerializeField] Transform[] _bones = new Transform[0];
 
 	SkinnedMeshRenderer _meshRenderer;
@@ -72,19 +77,18 @@ public class SpriteMeshRenderer : MonoBehaviour
 		}
 	}
 
-	void OnValidate()
+	public void RefreshRenderer()
 	{
 		if( spriteMesh && meshRenderer )
 		{
 			meshRenderer.sharedMesh = spriteMesh.sharedMesh;
 			meshRenderer.sharedMaterials = spriteMesh.sharedMaterials;
-
-			if( _bones.GetLength(0) != spriteMesh.sharedMesh.bindposes.GetLength(0) )
-			{
-				_bones = new Transform[spriteMesh.sharedMesh.bindposes.GetLength(0)];
-			}
-
 			meshRenderer.bones = _bones;
 		}
+	}
+
+	void OnValidate()
+	{
+		RefreshRenderer();
 	}
 }
