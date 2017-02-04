@@ -32,9 +32,10 @@ public class CharacterSlotManager : MonoBehaviour
 				_partsDict = new Dictionary<BodySlot, SpriteMeshRenderer>();
 				for( int i = 0; i < _parts.Length; ++i )
 				{
-					if( !_partsDict.ContainsKey( _parts[i].slot ) )
+					Body part = _parts[i];
+					if( part.slot && part.renderer && !_partsDict.ContainsKey( part.slot ) )
 					{
-						_partsDict.Add( _parts[i].slot, _parts[i].renderer );
+						_partsDict.Add( part.slot, part.renderer );
 					}
 				}
 			}
@@ -51,9 +52,10 @@ public class CharacterSlotManager : MonoBehaviour
 				_decalsDict = new Dictionary<DecalSlot, SpriteRenderer>();
 				for( int i = 0; i < _decals.Length; ++i )
 				{
-					if( !_decalsDict.ContainsKey( _decals[i].slot ) )
+					Decal decal = _decals[i];
+					if( decal.slot && decal.renderer && !_decalsDict.ContainsKey( decal.slot ) )
 					{
-						_decalsDict.Add( _decals[i].slot, _decals[i].renderer );
+						_decalsDict.Add( decal.slot, decal.renderer );
 					}
 				}
 			}
@@ -82,24 +84,28 @@ public class CharacterSlotManager : MonoBehaviour
 
 	public void ApplyBodyData( BodySlotData data )
 	{
-		SpriteMeshRenderer renderer = partsDict[data.slot];
-		if( renderer )
+		if( !data.slot ) return;
+
+		SpriteMeshRenderer renderer = null;
+		if( partsDict.TryGetValue( data.slot, out renderer ) && renderer )
 		{
-			renderer.enabled = (data.mesh == null);
-			renderer.spriteMesh = data.mesh;
+			renderer.enabled = (data.sprite == null);
+			renderer.spriteMesh = data.sprite;
 			renderer.color = data.color;
 			renderer.RefreshRenderer();
 		}
 		else
 		{
-			Debug.LogError( "Character does not have part for slot: " + data.slot.name, this );
+			Debug.LogError( "Character does not have part for slot: " + data.slot, this );
 		}
 	}
 
 	public void ApplyDecalData( DecalSlotData data )
 	{
-		SpriteRenderer renderer = decalsDict[data.slot];
-		if( renderer )
+		if( !data.slot ) return;
+
+		SpriteRenderer renderer = null;
+		if( decalsDict.TryGetValue( data.slot, out renderer ) && renderer )
 		{
 			renderer.enabled = (data.sprite == null);
 			renderer.sprite = data.sprite;
@@ -107,7 +113,7 @@ public class CharacterSlotManager : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogError( "Character does not have decal for slot: " + data.slot.name, this );
+			Debug.LogError( "Character does not have decal for slot: " + data.slot, this );
 		}
 	}
 }
