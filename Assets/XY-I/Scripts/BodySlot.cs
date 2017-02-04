@@ -12,6 +12,6 @@ public class BodySlot : ScriptableObject
 public struct BodySlotData
 {
 	public BodySlot slot;
-	public SpriteMesh mesh;
+	public SpriteMesh sprite;
 	public Color color;
 }
