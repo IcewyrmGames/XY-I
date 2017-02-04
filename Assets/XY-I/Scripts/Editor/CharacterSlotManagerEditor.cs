@@ -7,6 +7,12 @@ using UnityEditorInternal;
 [CustomEditor( typeof( CharacterSlotManager ) )]
 public class CharacterSlotManagerEditor : Editor
 {
+	static float FoldedElementHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2f;
+	static float UnfoldedElementHeight = EditorGUIUtility.singleLineHeight*4f + EditorGUIUtility.standardVerticalSpacing*5f;
+
+	static bool partsArrayUnfolded = false;
+	static bool decalsArrayUnfolded = false;
+
 	ReorderableList partsArray;
 	ReorderableList decalsArray;
 
@@ -23,27 +29,51 @@ public class CharacterSlotManagerEditor : Editor
 			true, true, true, true
 		);
 
-		partsArray.elementHeight = EditorGUIUtility.singleLineHeight*4f + EditorGUIUtility.standardVerticalSpacing*5f;
-		decalsArray.elementHeight = EditorGUIUtility.singleLineHeight*4f + EditorGUIUtility.standardVerticalSpacing*5f;
+		partsArray.elementHeightCallback = (int index) =>
+		{
+			return partsArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+		};
+		decalsArray.elementHeightCallback = (int index) =>
+		{
+			return decalsArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+		};
 
 		partsArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 		{
 			SerializedProperty property = partsArray.serializedProperty.GetArrayElementAtIndex( index );
-			EditorGUI.PropertyField( rect, property, GUIContent.none );
+			if( !partsArrayUnfolded )
+			{
+				rect.y += 2f; rect.height = EditorGUIUtility.singleLineHeight;
+				EditorGUI.PropertyField( rect, property.FindPropertyRelative( "slot" ), GUIContent.none );
+			}
+			else
+			{
+				EditorGUI.PropertyField( rect, property, GUIContent.none );
+			}
 		};
 		decalsArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 		{
 			SerializedProperty property = decalsArray.serializedProperty.GetArrayElementAtIndex( index );
-			EditorGUI.PropertyField( rect, property, GUIContent.none );
+			if( !partsArrayUnfolded )
+			{
+				rect.y += 2f; rect.height = EditorGUIUtility.singleLineHeight;
+				EditorGUI.PropertyField( rect, property.FindPropertyRelative( "slot" ), GUIContent.none );
+			}
+			else
+			{
+				EditorGUI.PropertyField( rect, property, GUIContent.none );
+			}
 		};
 
 		partsArray.drawHeaderCallback = (Rect rect) =>
 		{
-			EditorGUI.LabelField( rect, "Body Parts" );
+			rect.x += 10f;
+			partsArrayUnfolded = EditorGUI.Foldout( rect, partsArrayUnfolded, "Body Parts", true );
 		};
 		decalsArray.drawHeaderCallback = (Rect rect) =>
 		{
-			EditorGUI.LabelField( rect, "Decals" );
+			rect.x += 10f;
+			decalsArrayUnfolded = EditorGUI.Foldout( rect, decalsArrayUnfolded, "Decals", true );
 		};
 	}
 
