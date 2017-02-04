@@ -46,6 +46,7 @@ public class CharacterOutfitManagerEditor : Editor
 	{
 		serializedObject.Update();
 
+		EditorGUILayout.Separator();
 		outfitDataArray.DoLayoutList();
 
 		serializedObject.ApplyModifiedProperties();
