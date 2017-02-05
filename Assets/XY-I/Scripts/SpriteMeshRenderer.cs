@@ -11,7 +11,13 @@ public class SpriteMeshRenderer : MonoBehaviour
 	[SerializeField] SpriteMesh _spriteMesh;
 	public SpriteMesh spriteMesh {
 		get {return _spriteMesh;}
-		set {_spriteMesh = value;}
+		set {
+			_spriteMesh = value;
+			if( _spriteMesh )
+			{
+				meshRenderer.sharedMesh = _spriteMesh.sharedMesh;
+			}
+		}
 	}
 
 	[SerializeField] Color _color = Color.white;
@@ -65,30 +71,36 @@ public class SpriteMeshRenderer : MonoBehaviour
 		}
 	}
 
+	void OnEnable()
+	{
+		meshRenderer.enabled = true;
+	}
+
+	void OnDisable()
+	{
+		meshRenderer.enabled = false;
+	}
+
 	void OnWillRenderObject()
 	{
-		if( spriteMesh && meshRenderer && materialProperties != null )
+		if( spriteMesh && materialProperties != null )
 		{
 			meshRenderer.sortingLayerID = _sortingLayerID;
 			meshRenderer.sortingOrder = _sortingOrder;
 
 			materialProperties.SetColor( "_Color", _color );
-			meshRenderer.SetPropertyBlock( materialProperties );
-		}
-	}
+			materialProperties.SetTexture( "_MainTex", spriteMesh.sprite.texture );
 
-	public void RefreshRenderer()
-	{
-		if( spriteMesh && meshRenderer )
-		{
-			meshRenderer.sharedMesh = spriteMesh.sharedMesh;
-			meshRenderer.sharedMaterials = spriteMesh.sharedMaterials;
-			meshRenderer.bones = _bones;
+			meshRenderer.SetPropertyBlock( materialProperties );
 		}
 	}
 
 	void OnValidate()
 	{
-		RefreshRenderer();
+		if( spriteMesh )
+		{
+			meshRenderer.sharedMesh = spriteMesh.sharedMesh;
+			meshRenderer.bones = _bones;
+		}
 	}
 }

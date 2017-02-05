@@ -108,7 +108,6 @@ public class CharacterSlotManager : MonoBehaviour
 		renderer.enabled = (sprite != null);
 		renderer.spriteMesh = sprite;
 		renderer.color = color;
-		renderer.RefreshRenderer();
 	}
 
 	public void ApplyDecalData( DecalSlotData data )
