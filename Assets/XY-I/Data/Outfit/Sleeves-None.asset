@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb408ccf3ef4431494ed5d001e55c0b, type: 3}
+  m_Name: Sleeves-None
+  m_EditorClassIdentifier: 
+  slot: {fileID: 11400000, guid: 10502d3fc7bcd4e8c9ecb87069f103e6, type: 2}
+  bodyOverrides:
+  - slot: {fileID: 11400000, guid: 13822fc6cf35642aab123e978d1050bf, type: 2}
+    sprite: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - slot: {fileID: 11400000, guid: e6cfabbbf0ff34a8c9247deedd3f8476, type: 2}
+    sprite: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - slot: {fileID: 11400000, guid: 0c78f2ba7e4f140f99f9feffc795b2bb, type: 2}
+    sprite: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - slot: {fileID: 11400000, guid: 2b92ccd94cd18467d93c8d2adf8d0d97, type: 2}
+    sprite: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  decalOverrides: []

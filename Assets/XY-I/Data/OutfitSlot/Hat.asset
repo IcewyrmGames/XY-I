@@ -9,6 +9,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32287f74c2f90442e830d106f5084bee, type: 3}
-  m_Name: Torso_Main
+  m_Name: Hat
   m_EditorClassIdentifier: 
-  _applicationOrder: 0

@@ -40,4 +40,28 @@ public class CharacterOutfitManager : MonoBehaviour {
 			}
 		}
 	}
+
+	public void EquipOutfit( Outfit outfit )
+	{
+		for( int i = 0; i < _outfits.Length; ++i )
+		{
+			if( _outfits[i].slot == outfit.slot )
+			{
+				_outfits[i].outfit = outfit;
+				return;
+			}
+		}
+	}
+
+	public void UnequipOutfit( OutfitSlot slot )
+	{
+		for( int i = 0; i < _outfits.Length; ++i )
+		{
+			if( _outfits[i].slot == slot )
+			{
+				_outfits[i].outfit = null;
+				return;
+			}
+		}
+	}
 }
