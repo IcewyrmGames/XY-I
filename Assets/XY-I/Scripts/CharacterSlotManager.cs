@@ -105,7 +105,7 @@ public class CharacterSlotManager : MonoBehaviour
 	{
 		if( !renderer ) return;
 
-		renderer.enabled = (sprite == null);
+		renderer.enabled = (sprite != null);
 		renderer.spriteMesh = sprite;
 		renderer.color = color;
 		renderer.RefreshRenderer();
@@ -130,7 +130,7 @@ public class CharacterSlotManager : MonoBehaviour
 	{
 		if( !renderer ) return;
 
-		renderer.enabled = (sprite == null);
+		renderer.enabled = (sprite != null);
 		renderer.sprite = sprite;
 		renderer.color = color;
 	}
