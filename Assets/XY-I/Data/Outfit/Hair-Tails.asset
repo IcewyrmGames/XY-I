@@ -15,8 +15,16 @@ MonoBehaviour:
   bodyOverrides:
   - slot: {fileID: 11400000, guid: 13523e0c7dc9143a6a5e927517090fbc, type: 2}
     sprite: {fileID: 11400000, guid: d84871cf415564c51b5024bf7ce6c030, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 1}
+    color:
+      r: {r: 1, g: 1, b: 1, a: 1}
+      g: {r: 1, g: 1, b: 1, a: 1}
+      b: {r: 1, g: 1, b: 1, a: 1}
+      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2e16cd47746c04f008543c7462e77e50, type: 2}
     sprite: {fileID: 11400000, guid: e8b28024a42a84155aa2ad6280a17c83, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 1}
+    color:
+      r: {r: 1, g: 1, b: 1, a: 1}
+      g: {r: 1, g: 1, b: 1, a: 1}
+      b: {r: 1, g: 1, b: 1, a: 1}
+      a: {r: 1, g: 1, b: 1, a: 1}
   decalOverrides: []

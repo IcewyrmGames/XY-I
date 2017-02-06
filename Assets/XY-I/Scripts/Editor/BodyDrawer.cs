@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer( typeof( BodySlotData ) )]
-[CustomPropertyDrawer( typeof( DecalSlotData ) )]
+// [CustomPropertyDrawer( typeof( BodySlotData ) )]
+// [CustomPropertyDrawer( typeof( DecalSlotData ) )]
 public class SlotDataDrawer : PropertyDrawer
 {
 	const float SLOT_WIDTH = 100f;

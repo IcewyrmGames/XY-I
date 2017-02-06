@@ -20,8 +20,8 @@ public class SpriteMeshRenderer : MonoBehaviour
 		}
 	}
 
-	[SerializeField] Color _color = Color.white;
-	public Color color {
+	[SerializeField] ColorMask _color = ColorMask.white;
+	public ColorMask color {
 		get {return _color;}
 		set {_color = value;}
 	}
@@ -56,7 +56,6 @@ public class SpriteMeshRenderer : MonoBehaviour
 		if( oldInstance )
 		{
 			spriteMesh = oldInstance.spriteMesh;
-			_color = oldInstance.color;
 
 			_bones = new Transform[oldInstance.bones.Count];
 			for( int i = 0; i < oldInstance.bones.Count; ++i )
@@ -88,7 +87,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 			meshRenderer.sortingLayerID = _sortingLayerID;
 			meshRenderer.sortingOrder = _sortingOrder;
 
-			materialProperties.SetColor( "_Color", _color );
+			materialProperties.SetColorMask( _color );
 			materialProperties.SetTexture( "_MainTex", spriteMesh.sprite.texture );
 
 			meshRenderer.SetPropertyBlock( materialProperties );
@@ -102,5 +101,11 @@ public class SpriteMeshRenderer : MonoBehaviour
 			meshRenderer.sharedMesh = spriteMesh.sharedMesh;
 			meshRenderer.bones = _bones;
 		}
+	}
+
+	[ContextMenu("ResetColorMask")]
+	void ResetColorMaskValue()
+	{
+		_color = ColorMask.white;
 	}
 }

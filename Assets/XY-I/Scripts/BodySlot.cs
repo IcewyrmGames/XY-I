@@ -13,5 +13,5 @@ public struct BodySlotData
 {
 	public BodySlot slot;
 	public SpriteMesh sprite;
-	public Color color;
+	public ColorMask color;
 }

@@ -12,7 +12,7 @@ public class CharacterSlotManager : MonoBehaviour
 		public SpriteMeshRenderer renderer;
 
 		public SpriteMesh defaultSprite;
-		public Color defaultColor;
+		public ColorMask defaultColor;
 	}
 
 	[System.Serializable]
@@ -101,7 +101,7 @@ public class CharacterSlotManager : MonoBehaviour
 		}
 	}
 
-	public void ApplyBodyData( SpriteMeshRenderer renderer, SpriteMesh sprite, Color color )
+	public void ApplyBodyData( SpriteMeshRenderer renderer, SpriteMesh sprite, ColorMask color )
 	{
 		if( !renderer ) return;
 
