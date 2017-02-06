@@ -5,6 +5,8 @@ using Anima2D;
 [RequireComponent( typeof( SkinnedMeshRenderer ) )]
 public class SpriteMeshRenderer : MonoBehaviour
 {
+	static int _MainTex = Shader.PropertyToID( "_MainTex" );
+
 	[SerializeField] int _sortingLayerID = 0;
 	[SerializeField] int _sortingOrder = 0;
 
@@ -88,7 +90,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 			meshRenderer.sortingOrder = _sortingOrder;
 
 			materialProperties.SetColorMask( _color );
-			materialProperties.SetTexture( "_MainTex", spriteMesh.sprite.texture );
+			materialProperties.SetTexture( _MainTex, spriteMesh.sprite.texture );
 
 			meshRenderer.SetPropertyBlock( materialProperties );
 		}
