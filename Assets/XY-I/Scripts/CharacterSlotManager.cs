@@ -78,11 +78,19 @@ public class CharacterSlotManager : MonoBehaviour
 	{
 		foreach( Body body in _parts )
 		{
-			ApplyBodyData( body.renderer, body.defaultSprite, body.defaultColor );
+			if( body.renderer )
+			{
+				body.renderer.spriteMesh = body.defaultSprite;
+				body.renderer.color = body.defaultColor;
+			}
 		}
 		foreach( Decal decal in _decals )
 		{
-			ApplyDecalData( decal.renderer, decal.defaultSprite, decal.defaultColor );
+			if( decal.renderer )
+			{
+				decal.renderer.sprite = decal.defaultSprite;
+				decal.renderer.color = decal.defaultColor;
+			}
 		}
 	}
 
@@ -93,21 +101,16 @@ public class CharacterSlotManager : MonoBehaviour
 		Body body;
 		if( partsDict.TryGetValue( data.slot, out body ) )
 		{
-			ApplyBodyData( body.renderer, data.sprite, data.color );
+			if( body.renderer )
+			{
+				body.renderer.spriteMesh = data.sprite;
+				body.renderer.color = data.color;
+			}
 		}
 		else
 		{
 			Debug.LogError( "Character does not have part for slot: " + data.slot, this );
 		}
-	}
-
-	public void ApplyBodyData( SpriteMeshRenderer renderer, SpriteMesh sprite, ColorMask color )
-	{
-		if( !renderer ) return;
-
-		renderer.enabled = (sprite != null);
-		renderer.spriteMesh = sprite;
-		renderer.color = color;
 	}
 
 	public void ApplyDecalData( DecalSlotData data )
@@ -117,20 +120,15 @@ public class CharacterSlotManager : MonoBehaviour
 		Decal decal;
 		if( decalsDict.TryGetValue( data.slot, out decal ) )
 		{
-			ApplyDecalData( decal.renderer, data.sprite, data.color );
+			if( decal.renderer )
+			{
+				decal.renderer.sprite = data.sprite;
+				decal.renderer.color = data.color;
+			}
 		}
 		else
 		{
 			Debug.LogError( "Character does not have decal for slot: " + data.slot, this );
 		}
-	}
-
-	public void ApplyDecalData( SpriteRenderer renderer, Sprite sprite, Color color )
-	{
-		if( !renderer ) return;
-
-		renderer.enabled = (sprite != null);
-		renderer.sprite = sprite;
-		renderer.color = color;
 	}
 }

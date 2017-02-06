@@ -5653,7 +5653,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4341938, guid: 4457f9645fa6c488f94a0691a95fcd62, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4490117391360058}
   - {fileID: 4373211747987436}
@@ -6029,7 +6029,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4307328, guid: e8b28024a42a84155aa2ad6280a17c83, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4159044558631158}
   - {fileID: 4269188690048540}
@@ -6213,7 +6213,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4360534, guid: d84871cf415564c51b5024bf7ce6c030, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4215977593247134}
   - {fileID: 4757851239170996}
@@ -6395,7 +6395,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4341938, guid: 4457f9645fa6c488f94a0691a95fcd62, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4073352589412594}
   - {fileID: 4429984775574236}
