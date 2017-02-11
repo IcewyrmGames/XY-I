@@ -4,10 +4,9 @@ Shader "Sprites/MaskedColor"
 	{
 		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
 		[PerRendererData] _ColorMask ("Color Mask", 2D) = "red" {}
-		_ColorR ("Color R", Color) = (1,1,1,1)
-		_ColorG ("Color G", Color) = (1,1,1,1)
-		_ColorB ("Color B", Color) = (1,1,1,1)
-		_ColorA ("Color A", Color) = (1,1,1,1)
+		[PerRendererData] _Color ("Color", Color) = (1,1,1,1)
+		[PerRendererData] _Color1 ("Color1", Color) = (1,1,1,1)
+		[PerRendererData] _Color2 ("Color2", Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 	}
 
@@ -70,10 +69,12 @@ Shader "Sprites/MaskedColor"
 
 			sampler2D _MainTex;
 			sampler2D _AlphaTex;
-			fixed4 _ColorR;
-			fixed4 _ColorG;
-			fixed4 _ColorB;
-			fixed4 _ColorA;
+
+			fixed4 _Color;
+			fixed4 _Color1;
+			fixed4 _Color2;
+			uniform fixed4 _BaseColor;
+
 			sampler2D _ColorMask;
 
 			fixed4 SampleSpriteTexture (float2 uv)
@@ -93,10 +94,10 @@ Shader "Sprites/MaskedColor"
 				fixed4 mask = tex2D( _ColorMask, IN.texcoord );
 
 				fixed4 tint = IN.color;
-				tint = lerp( tint, _ColorR, mask.r );
-				tint = lerp( tint, _ColorG, mask.g );
-				tint = lerp( tint, _ColorB, mask.b );
-				tint = lerp( tint, _ColorA, mask.a );
+				tint = lerp( tint, _Color, mask.r );
+				tint = lerp( tint, _Color1, mask.g );
+				tint = lerp( tint, _Color2, mask.b );
+				tint = lerp( tint, _BaseColor, mask.a );
 
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * tint;
 				c.rgb *= c.a;
