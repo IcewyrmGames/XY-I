@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class CharacterOutfitManager : MonoBehaviour {
 	[System.Serializable]
 	public class OutfitData
 	{
 		public OutfitSlot slot;
 		public Outfit outfit;
+		public ColorMask colors;
 	}
 
 	[SerializeField] CharacterSlotManager _slotManager;
@@ -45,17 +47,25 @@ public class CharacterOutfitManager : MonoBehaviour {
 	public void Refresh()
 	{
 		_slotManager.ApplyDefaultData();
-		foreach( OutfitData data in _outfits )
+		foreach( OutfitData outfitData in _outfits )
 		{
-			if( data.outfit )
+			if( outfitData.outfit )
 			{
-				foreach( BodySlotData bodyData in data.outfit.bodyOverrides )
+				foreach( BodySlotData bodyData in outfitData.outfit.bodyOverrides )
 				{
-					_slotManager.ApplyBodyData( bodyData );
+					_slotManager.ApplyBodyData(
+						bodyData.slot,
+						bodyData.sprite,
+						bodyData.color
+					);
 				}
-				foreach( DecalSlotData decalData in data.outfit.decalOverrides )
+				foreach( DecalSlotData decalData in outfitData.outfit.decalOverrides )
 				{
-					_slotManager.ApplyDecalData( decalData );
+					_slotManager.ApplyDecalData(
+						decalData.slot,
+						decalData.sprite,
+						outfitData.colors.r
+					);
 				}
 			}
 		}

@@ -64,10 +64,9 @@ public class CharacterInfoDrawer : PropertyDrawer
 			if( spriteMeshRenderer != null )
 			{
 				defaultSprite.objectReferenceValue = spriteMeshRenderer.spriteMesh;
-				defaultColor.FindPropertyRelative( "r" ).colorValue = spriteMeshRenderer.color.r;
-				defaultColor.FindPropertyRelative( "g" ).colorValue = spriteMeshRenderer.color.g;
-				defaultColor.FindPropertyRelative( "b" ).colorValue = spriteMeshRenderer.color.b;
-				defaultColor.FindPropertyRelative( "a" ).colorValue = spriteMeshRenderer.color.a;
+				defaultColor.FindPropertyRelative( "r" ).colorValue = spriteMeshRenderer.colors.r;
+				defaultColor.FindPropertyRelative( "g" ).colorValue = spriteMeshRenderer.colors.g;
+				defaultColor.FindPropertyRelative( "b" ).colorValue = spriteMeshRenderer.colors.b;
 			}
 			else if ( spriteRenderer != null )
 			{

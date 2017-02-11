@@ -11,7 +11,7 @@ public class SpriteMeshRendererEditor : Editor
 	SerializedProperty sortingOrder;
 	SerializedProperty sortingLayerID;
 	SerializedProperty spriteMesh;
-	SerializedProperty color;
+	SerializedProperty colors;
 
 	ReorderableList boneList;
 
@@ -22,7 +22,7 @@ public class SpriteMeshRendererEditor : Editor
 		sortingOrder = serializedObject.FindProperty( "_sortingOrder" );
 		sortingLayerID = serializedObject.FindProperty( "_sortingLayerID" );
 		spriteMesh = serializedObject.FindProperty( "_spriteMesh" );
-		color = serializedObject.FindProperty( "_color" );
+		colors = serializedObject.FindProperty( "_colors" );
 
 		boneList = new ReorderableList(
 			serializedObject,
@@ -74,7 +74,7 @@ public class SpriteMeshRendererEditor : Editor
 			}
 		}
 
-		EditorGUILayout.PropertyField( color );
+		EditorGUILayout.PropertyField( colors );
 
 		EditorGUI.BeginDisabledGroup( EditorApplication.isPlayingOrWillChangePlaymode );
 		boneList.DoLayoutList();

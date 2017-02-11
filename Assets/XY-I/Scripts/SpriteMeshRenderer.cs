@@ -5,45 +5,16 @@ using Anima2D;
 [RequireComponent( typeof( SkinnedMeshRenderer ) )]
 public class SpriteMeshRenderer : MonoBehaviour
 {
-	int _MainTex;
+	int _MainTexProperty;
 
 	[SerializeField] int _sortingLayerID = 0;
 	[SerializeField] int _sortingOrder = 0;
 
 	[SerializeField] SpriteMesh _spriteMesh;
-	public SpriteMesh spriteMesh {
-		get {return _spriteMesh;}
-		set {
-			_spriteMesh = value;
-			if( _spriteMesh )
-			{
-				enabled = true;
-				meshRenderer.enabled = true;
+	public SpriteMesh spriteMesh {get {return _spriteMesh;}}
 
-				meshRenderer.sharedMesh = _spriteMesh.sharedMesh;
-				materialProperties.SetTexture( _MainTex, _spriteMesh.sprite.texture );
-			}
-			else
-			{
-				enabled = false;
-				meshRenderer.enabled = false;
-
-				meshRenderer.sharedMesh = null;
-				materialProperties.SetTexture( _MainTex, Texture2D.whiteTexture );
-			}
-			meshRenderer.SetPropertyBlock( materialProperties );
-		}
-	}
-
-	[SerializeField] ColorMask _color = ColorMask.white;
-	public ColorMask color {
-		get {return _color;}
-		set {
-			_color = value;
-			materialProperties.SetColorMask( _color );
-			meshRenderer.SetPropertyBlock( materialProperties );
-		}
-	}
+	[SerializeField] ColorMask _colors = ColorMask.white;
+	public ColorMask colors {get {return _colors;}}
 
 	[SerializeField] Transform[] _bones = new Transform[0];
 
@@ -64,7 +35,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 			if( _materialProperties == null )
 			{
 				_materialProperties = new MaterialPropertyBlock();
-				_MainTex = Shader.PropertyToID( "_MainTex" );
+				_MainTexProperty = Shader.PropertyToID( "_MainTex" );
 			}
 			return _materialProperties;
 		}
@@ -75,7 +46,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 		SpriteMeshInstance oldInstance = GetComponent<SpriteMeshInstance>();
 		if( oldInstance )
 		{
-			spriteMesh = oldInstance.spriteMesh;
+			SetSpriteMesh( oldInstance.spriteMesh );
 
 			_bones = new Transform[oldInstance.bones.Count];
 			for( int i = 0; i < oldInstance.bones.Count; ++i )
@@ -95,8 +66,7 @@ public class SpriteMeshRenderer : MonoBehaviour
 		meshRenderer.sortingLayerID = _sortingLayerID;
 		meshRenderer.sortingOrder = _sortingOrder;
 
-		spriteMesh = _spriteMesh;
-		color = _color;
+		SetProperties( _spriteMesh, _colors );
 	}
 
 	void OnValidate()
@@ -106,9 +76,40 @@ public class SpriteMeshRenderer : MonoBehaviour
 		Start();
 	}
 
-	[ContextMenu("ResetColorMask")]
-	void ResetColorMaskValue()
+	public void SetSpriteMesh( SpriteMesh newSpriteMesh )
 	{
-		_color = ColorMask.white;
+		_spriteMesh = newSpriteMesh;
+		if( _spriteMesh )
+		{
+			enabled = true;
+			meshRenderer.enabled = true;
+
+			meshRenderer.sharedMesh = _spriteMesh.sharedMesh;
+			materialProperties.SetTexture( _MainTexProperty, _spriteMesh.sprite.texture );
+		}
+		else
+		{
+			enabled = false;
+			meshRenderer.enabled = false;
+
+			meshRenderer.sharedMesh = null;
+			materialProperties.SetTexture( _MainTexProperty, Texture2D.whiteTexture );
+		}
+	}
+
+	public void SetColors( ColorMask newColors )
+	{
+		_colors = newColors;
+		materialProperties.SetColorMask( _colors );
+	}
+
+	public void SetProperties( SpriteMesh newSpriteMesh, ColorMask newColors )
+	{
+		materialProperties.Clear();
+
+		SetSpriteMesh( newSpriteMesh );
+		SetColors( newColors );
+
+		meshRenderer.SetPropertyBlock( materialProperties );
 	}
 }
