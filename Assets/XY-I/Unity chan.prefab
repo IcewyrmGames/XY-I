@@ -2320,13 +2320,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019644090356714}
-  m_LocalRotation: {x: 0, y: 0, z: 0.6389092, w: 0.7692822}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8845608, w: 0.46642497}
   m_LocalPosition: {x: 0.098107286, y: 0.16678175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4868756456491346}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 124.395004}
 --- !u!4 &4589404306494008
 Transform:
   m_ObjectHideFlags: 1
@@ -3122,11 +3122,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -8
   _spriteMesh: {fileID: 0}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4490117391360058}
   - {fileID: 4373211747987436}
@@ -3163,11 +3162,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 4
   _spriteMesh: {fileID: 11400000, guid: 7585759fdddd947e6b258ac682fd6f94, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!114 &114164911553165292
@@ -3219,11 +3217,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 24
   _spriteMesh: {fileID: 11400000, guid: ad0895b4339a04648814d6ed5387075d, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4827928201946116}
 --- !u!114 &114173952263656340
@@ -3367,11 +3364,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 0
   _spriteMesh: {fileID: 11400000, guid: 274c50f55e06848f9ad4648a385ceb4b, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4484857225578762}
   - {fileID: 4222038985217184}
@@ -3489,7 +3485,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 66e2f4363319b421eba5ea0e9d5fa686, type: 2}
     renderer: {fileID: 114914353835639740}
     defaultSprite: {fileID: 11400000, guid: 80886a6da52274cf88cec9d1000bce94, type: 2}
@@ -3497,7 +3492,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2d967b2c2c41e439991c5fedd60286ec, type: 2}
     renderer: {fileID: 114493601535400722}
     defaultSprite: {fileID: 11400000, guid: b03d2ceef0b8c4dadb11239639e97ad3, type: 2}
@@ -3505,7 +3499,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 49496f75fb45d4aad9b6c2229c1a81d6, type: 2}
     renderer: {fileID: 114819914961008486}
     defaultSprite: {fileID: 11400000, guid: 0fdf8ddc10d8945c484f27f2db4e2f6b, type: 2}
@@ -3513,7 +3506,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 982682a0e282b41d9b9e5269a44c9b5a, type: 2}
     renderer: {fileID: 114697171437848354}
     defaultSprite: {fileID: 11400000, guid: 3eda82f62fe8d44e3b7395cc2fdf7cf1, type: 2}
@@ -3521,7 +3513,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 3851dc9eda7bd4c7288a14818e7359bf, type: 2}
     renderer: {fileID: 114157791837569516}
     defaultSprite: {fileID: 11400000, guid: 7585759fdddd947e6b258ac682fd6f94, type: 2}
@@ -3529,7 +3520,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 3369f0d5996ac4190a6fa52d26b12b8d, type: 2}
     renderer: {fileID: 114601797370892130}
     defaultSprite: {fileID: 11400000, guid: 28812d65cf58447be9ece617a5e7caf0, type: 2}
@@ -3537,7 +3527,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: c1aedb62878c04ea888ab851f088e4c8, type: 2}
     renderer: {fileID: 114953605862452438}
     defaultSprite: {fileID: 11400000, guid: 8f794e6b130264820bb03c9c0a9c22a2, type: 2}
@@ -3545,7 +3534,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 6bb2b87fb365c4ccfacd5fca1486f63b, type: 2}
     renderer: {fileID: 114998587280729220}
     defaultSprite: {fileID: 11400000, guid: 87e9315247eed428797fb1ffda07ba58, type: 2}
@@ -3553,7 +3541,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: b2ff6253220fe443297e46cf2896df14, type: 2}
     renderer: {fileID: 114600323022843116}
     defaultSprite: {fileID: 11400000, guid: d608f4689b6d946e8829ca2b657da024, type: 2}
@@ -3561,7 +3548,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 13523e0c7dc9143a6a5e927517090fbc, type: 2}
     renderer: {fileID: 114971037814035032}
     defaultSprite: {fileID: 0}
@@ -3569,7 +3555,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2e16cd47746c04f008543c7462e77e50, type: 2}
     renderer: {fileID: 114822290428838898}
     defaultSprite: {fileID: 0}
@@ -3577,7 +3562,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 7c524f3d066974cf2941922fc96cb56c, type: 2}
     renderer: {fileID: 114819639638848246}
     defaultSprite: {fileID: 11400000, guid: 98fcea299087849f4a53cf07e8e047c0, type: 2}
@@ -3585,7 +3569,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 4e4b232a6ea7d455c85d23a31557328d, type: 2}
     renderer: {fileID: 114853669922940536}
     defaultSprite: {fileID: 11400000, guid: f32101f8b298e4fad8165e1661318012, type: 2}
@@ -3593,7 +3576,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 04d6482c36e2c45a68bbf6f9a56d5345, type: 2}
     renderer: {fileID: 114201689880070092}
     defaultSprite: {fileID: 11400000, guid: 274c50f55e06848f9ad4648a385ceb4b, type: 2}
@@ -3601,7 +3583,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: fe3edf78c1cf1456b8a460becafeb0fb, type: 2}
     renderer: {fileID: 114391422205286826}
     defaultSprite: {fileID: 11400000, guid: 1a28f70faf8fc43238f48619530cba02, type: 2}
@@ -3609,7 +3590,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 7f29f76be001d48b992554d2ece368a1, type: 2}
     renderer: {fileID: 114972120720420132}
     defaultSprite: {fileID: 11400000, guid: 9e754af9f507a4b91b88f7a64ce5aadb, type: 2}
@@ -3617,7 +3597,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 555b9cb8dce404d22bdfebb479041e5b, type: 2}
     renderer: {fileID: 114695999756609688}
     defaultSprite: {fileID: 11400000, guid: b1af0fa72e4ed4b62b746be41af9e61f, type: 2}
@@ -3625,7 +3604,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2e3849cb92e8e43259298e635e75c1e3, type: 2}
     renderer: {fileID: 114291193111541678}
     defaultSprite: {fileID: 11400000, guid: a82f9e54b16684c7e9b452ccdb817e93, type: 2}
@@ -3633,7 +3611,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 3e3233e5a0ac64994b517396fddec0b6, type: 2}
     renderer: {fileID: 114491484487544348}
     defaultSprite: {fileID: 0}
@@ -3641,7 +3618,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: dee2f124710f14701a984ec753503d24, type: 2}
     renderer: {fileID: 114120902484818042}
     defaultSprite: {fileID: 0}
@@ -3649,7 +3625,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 13822fc6cf35642aab123e978d1050bf, type: 2}
     renderer: {fileID: 114620624431375826}
     defaultSprite: {fileID: 11400000, guid: 2ac4b304e6b344fed926715052917142, type: 2}
@@ -3657,7 +3632,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 0c78f2ba7e4f140f99f9feffc795b2bb, type: 2}
     renderer: {fileID: 114754718078088988}
     defaultSprite: {fileID: 11400000, guid: 5b584babe0013492c936117ce0891ecd, type: 2}
@@ -3665,7 +3639,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: e6cfabbbf0ff34a8c9247deedd3f8476, type: 2}
     renderer: {fileID: 114167379189132630}
     defaultSprite: {fileID: 11400000, guid: ad0895b4339a04648814d6ed5387075d, type: 2}
@@ -3673,7 +3646,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2b92ccd94cd18467d93c8d2adf8d0d97, type: 2}
     renderer: {fileID: 114274286794491636}
     defaultSprite: {fileID: 11400000, guid: c0896d1c782504e0f987da820c3ed223, type: 2}
@@ -3681,7 +3653,6 @@ MonoBehaviour:
       r: {r: 1, g: 1, b: 1, a: 1}
       g: {r: 1, g: 1, b: 1, a: 1}
       b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   _decals: []
 --- !u!114 &114235085956108022
 MonoBehaviour:
@@ -3751,11 +3722,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -4
   _spriteMesh: {fileID: 11400000, guid: c0896d1c782504e0f987da820c3ed223, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4887058983142630}
   - {fileID: 4853976674455308}
@@ -3827,11 +3797,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 7
   _spriteMesh: {fileID: 11400000, guid: a82f9e54b16684c7e9b452ccdb817e93, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!114 &114302704942370324
@@ -4001,11 +3970,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -1
   _spriteMesh: {fileID: 11400000, guid: 1a28f70faf8fc43238f48619530cba02, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4484857225578762}
   - {fileID: 4669836135367002}
@@ -4227,11 +4195,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -7
   _spriteMesh: {fileID: 0}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4073352589412594}
   - {fileID: 4429984775574236}
@@ -4252,11 +4219,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 1
   _spriteMesh: {fileID: 11400000, guid: b03d2ceef0b8c4dadb11239639e97ad3, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4895378565410618}
   - {fileID: 4853976674455308}
@@ -4276,11 +4242,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 25
   _spriteMesh: {fileID: 11400000, guid: 9960bcfaeec6746459698a019e5d5098, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4070719861929870}
   - {fileID: 4983528012738880}
@@ -4489,11 +4454,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 6
   _spriteMesh: {fileID: 11400000, guid: d608f4689b6d946e8829ca2b657da024, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!114 &114601797370892130
@@ -4510,11 +4474,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 4
   _spriteMesh: {fileID: 11400000, guid: 28812d65cf58447be9ece617a5e7caf0, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!114 &114608854009602932
@@ -4566,11 +4529,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 26
   _spriteMesh: {fileID: 11400000, guid: 2ac4b304e6b344fed926715052917142, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4070719861929870}
   - {fileID: 4827928201946116}
@@ -4736,11 +4698,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -1
   _spriteMesh: {fileID: 11400000, guid: b1af0fa72e4ed4b62b746be41af9e61f, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4853976674455308}
   - {fileID: 4589404306494008}
@@ -4759,11 +4720,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 5
   _spriteMesh: {fileID: 11400000, guid: 3eda82f62fe8d44e3b7395cc2fdf7cf1, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4285163711157326}
 --- !u!114 &114719906714265480
@@ -4831,11 +4791,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -2
   _spriteMesh: {fileID: 11400000, guid: 5b584babe0013492c936117ce0891ecd, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4887058983142630}
   - {fileID: 4271413872683460}
@@ -4918,11 +4877,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 15
   _spriteMesh: {fileID: 11400000, guid: 98fcea299087849f4a53cf07e8e047c0, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4179189887070172}
   - {fileID: 4826819699876990}
@@ -4943,11 +4901,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 5
   _spriteMesh: {fileID: 11400000, guid: 0fdf8ddc10d8945c484f27f2db4e2f6b, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4989721530669026}
 --- !u!114 &114821032091795026
@@ -4983,11 +4940,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -10
   _spriteMesh: {fileID: 0}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4159044558631158}
   - {fileID: 4269188690048540}
@@ -5038,11 +4994,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 10
   _spriteMesh: {fileID: 11400000, guid: f32101f8b298e4fad8165e1661318012, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4187090456735024}
   - {fileID: 4448399744439020}
@@ -5158,10 +5113,22 @@ MonoBehaviour:
   _outfits:
   - slot: {fileID: 11400000, guid: 718f70542c50f4c43ab986b9fbea99e9, type: 2}
     outfit: {fileID: 0}
+    colors:
+      r: {r: 0, g: 0, b: 0, a: 0}
+      g: {r: 0, g: 0, b: 0, a: 0}
+      b: {r: 0, g: 0, b: 0, a: 0}
   - slot: {fileID: 11400000, guid: 725ae6c28e1314b8bbfcba1be6c805c8, type: 2}
     outfit: {fileID: 0}
+    colors:
+      r: {r: 0, g: 0, b: 0, a: 0}
+      g: {r: 0, g: 0, b: 0, a: 0}
+      b: {r: 0, g: 0, b: 0, a: 0}
   - slot: {fileID: 11400000, guid: 10502d3fc7bcd4e8c9ecb87069f103e6, type: 2}
     outfit: {fileID: 0}
+    colors:
+      r: {r: 0, g: 0, b: 0, a: 0}
+      g: {r: 0, g: 0, b: 0, a: 0}
+      b: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114906908581239492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5213,11 +5180,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -3
   _spriteMesh: {fileID: 11400000, guid: 80886a6da52274cf88cec9d1000bce94, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4887058983142630}
   - {fileID: 4843572510180728}
@@ -5304,11 +5270,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 7
   _spriteMesh: {fileID: 11400000, guid: 8f794e6b130264820bb03c9c0a9c22a2, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!114 &114956675385851586
@@ -5411,11 +5376,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -9
   _spriteMesh: {fileID: 0}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4215977593247134}
   - {fileID: 4757851239170996}
@@ -5435,11 +5399,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: -2
   _spriteMesh: {fileID: 11400000, guid: 9e754af9f507a4b91b88f7a64ce5aadb, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4222038985217184}
   - {fileID: 4816674935002428}
@@ -5477,11 +5440,10 @@ MonoBehaviour:
   _sortingLayerID: 0
   _sortingOrder: 7
   _spriteMesh: {fileID: 11400000, guid: 87e9315247eed428797fb1ffda07ba58, type: 2}
-  _color:
+  _colors:
     r: {r: 1, g: 1, b: 1, a: 1}
     g: {r: 1, g: 1, b: 1, a: 1}
     b: {r: 1, g: 1, b: 1, a: 1}
-    a: {r: 1, g: 1, b: 1, a: 1}
   _bones:
   - {fileID: 4114977198256588}
 --- !u!137 &137007901581795094
