@@ -14,11 +14,31 @@ public class CharacterOutfitManager : MonoBehaviour {
 
 	[SerializeField] OutfitData[] _outfits = new OutfitData[0];
 
+	Dictionary<OutfitSlot, OutfitData> _outfitDict = new Dictionary<OutfitSlot, OutfitData>();
+
 	void OnValidate()
 	{
+		RefreshDictionary();
 		if( _slotManager )
 		{
 			Refresh();
+		}
+	}
+
+	void OnEnabled()
+	{
+		RefreshDictionary();
+	}
+
+	void RefreshDictionary()
+	{
+		_outfitDict.Clear();
+		foreach( OutfitData data in _outfits )
+		{
+			if( data.slot )
+			{
+				_outfitDict.Add( data.slot, data );
+			}
 		}
 	}
 
@@ -43,25 +63,17 @@ public class CharacterOutfitManager : MonoBehaviour {
 
 	public void EquipOutfit( Outfit outfit )
 	{
-		for( int i = 0; i < _outfits.Length; ++i )
+		if( _outfitDict.ContainsKey( outfit.slot ) )
 		{
-			if( _outfits[i].slot == outfit.slot )
-			{
-				_outfits[i].outfit = outfit;
-				return;
-			}
+			_outfitDict[outfit.slot].outfit = outfit;
 		}
 	}
 
 	public void UnequipOutfit( OutfitSlot slot )
 	{
-		for( int i = 0; i < _outfits.Length; ++i )
+		if( _outfitDict.ContainsKey( slot ) )
 		{
-			if( _outfits[i].slot == slot )
-			{
-				_outfits[i].outfit = null;
-				return;
-			}
+			_outfitDict[slot].outfit = null;
 		}
 	}
 }
