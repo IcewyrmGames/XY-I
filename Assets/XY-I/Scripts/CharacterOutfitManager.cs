@@ -9,7 +9,7 @@ public class CharacterOutfitManager : MonoBehaviour {
 	{
 		public OutfitSlot slot;
 		public Outfit outfit;
-		public ColorMask colors;
+		public ColorMask colors = ColorMask.white;
 	}
 
 	[SerializeField] CharacterSlotManager _slotManager;
@@ -56,7 +56,7 @@ public class CharacterOutfitManager : MonoBehaviour {
 					_slotManager.ApplyBodyData(
 						bodyData.slot,
 						bodyData.sprite,
-						bodyData.color
+						outfitData.colors
 					);
 				}
 				foreach( DecalSlotData decalData in outfitData.outfit.decalOverrides )
@@ -84,6 +84,14 @@ public class CharacterOutfitManager : MonoBehaviour {
 		if( _outfitDict.ContainsKey( slot ) )
 		{
 			_outfitDict[slot].outfit = null;
+		}
+	}
+
+	public void SetOutfitColor( OutfitSlot slot, ColorMask colors )
+	{
+		if( _outfitDict.ContainsKey( slot ) )
+		{
+			_outfitDict[slot].colors = colors;
 		}
 	}
 }
