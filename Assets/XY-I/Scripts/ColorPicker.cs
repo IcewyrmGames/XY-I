@@ -17,17 +17,19 @@ public class ColorPicker : MonoBehaviour
 
     private float _alpha = 1;
 
-    public ColorChangedEvent onValueChanged = new ColorChangedEvent();
-    public HSVChangedEvent onHSVChanged = new HSVChangedEvent();
+    public ColorChangedEvent onColorChanged = new ColorChangedEvent();
+    public FloatEvent onRedChanged = new FloatEvent();
+    public FloatEvent onGreenChanged = new FloatEvent();
+    public FloatEvent onBlueChanged = new FloatEvent();
+    public FloatEvent onHueChanged = new FloatEvent();
+    public FloatEvent onSaturationChanged = new FloatEvent();
+    public FloatEvent onValueChanged = new FloatEvent();
 
-    public Color CurrentColor
-    {
-        get
-        {
+    public Color CurrentColor {
+        get {
             return new Color(_red, _green, _blue, _alpha);
         }
-        set
-        {
+        set {
             if (CurrentColor == value)
                 return;
 
@@ -37,7 +39,6 @@ public class ColorPicker : MonoBehaviour
             _alpha = value.a;
 
             RGBChanged();
-
             SendChangedEvent();
         }
     }
@@ -198,8 +199,13 @@ public class ColorPicker : MonoBehaviour
 
     private void SendChangedEvent()
     {
-        onValueChanged.Invoke(CurrentColor);
-        onHSVChanged.Invoke(_hue, _saturation, _brightness);
+        onColorChanged.Invoke(CurrentColor);
+        onRedChanged.Invoke( _red );
+        onGreenChanged.Invoke( _green );
+        onBlueChanged.Invoke( _blue );
+        onHueChanged.Invoke( _hue );
+        onSaturationChanged.Invoke( _saturation );
+        onValueChanged.Invoke( _brightness );
     }
 
     public void AssignColor(ColorValues type, float value)
