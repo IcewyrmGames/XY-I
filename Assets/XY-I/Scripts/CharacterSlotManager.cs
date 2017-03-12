@@ -6,28 +6,8 @@ using Anima2D;
 [ExecuteInEditMode]
 public class CharacterSlotManager : MonoBehaviour
 {
-	[System.Serializable]
-	public struct Body
-	{
-		public BodySlot slot;
-		public SpriteMeshRenderer renderer;
-
-		public SpriteMesh defaultSprite;
-		public ColorMask defaultColor;
-	}
-
-	[System.Serializable]
-	public struct Decal
-	{
-		public DecalSlot slot;
-		public SpriteRenderer renderer;
-
-		public Sprite defaultSprite;
-		public Color defaultColor;
-	}
-
-	[SerializeField] Body[] _parts = new Body[0];
-	[SerializeField] Decal[] _decals = new Decal[0];
+	[SerializeField] BodyRendererData[] _parts = new BodyRendererData[0];
+	[SerializeField] DecalRendererData[] _decals = new DecalRendererData[0];
 
 	Dictionary<BodySlot, SpriteMeshRenderer> _bodyRendererDict = new Dictionary<BodySlot, SpriteMeshRenderer>();
 	Dictionary<DecalSlot, SpriteRenderer> _decalRendererDict = new Dictionary<DecalSlot, SpriteRenderer>();
@@ -47,7 +27,7 @@ public class CharacterSlotManager : MonoBehaviour
 		_bodyRendererDict.Clear();
 		for( int i = 0; i < _parts.Length; ++i )
 		{
-			Body part = _parts[i];
+			BodyRendererData part = _parts[i];
 			if( part.slot && part.renderer && !_bodyRendererDict.ContainsKey( part.slot ) )
 			{
 				_bodyRendererDict.Add( part.slot, part.renderer );
@@ -56,7 +36,7 @@ public class CharacterSlotManager : MonoBehaviour
 		_decalRendererDict.Clear();
 		for( int i = 0; i < _decals.Length; ++i )
 		{
-			Decal decal = _decals[i];
+			DecalRendererData decal = _decals[i];
 			if( decal.slot && decal.renderer && !_decalRendererDict.ContainsKey( decal.slot ) )
 			{
 				_decalRendererDict.Add( decal.slot, decal.renderer );
@@ -66,7 +46,7 @@ public class CharacterSlotManager : MonoBehaviour
 
 	public void ApplyDefaultData()
 	{
-		foreach( Body body in _parts )
+		foreach( BodyRendererData body in _parts )
 		{
 			if( body.renderer )
 			{
@@ -76,7 +56,7 @@ public class CharacterSlotManager : MonoBehaviour
 				);
 			}
 		}
-		foreach( Decal decal in _decals )
+		foreach( DecalRendererData decal in _decals )
 		{
 			if( decal.renderer )
 			{

@@ -7,6 +7,6 @@ public class Outfit : ScriptableObject
 {
 	public OutfitSlot slot;
 
-	public BodySlotData[] bodyOverrides = new BodySlotData[0];
-	public DecalSlotData[] decalOverrides = new DecalSlotData[0];
+	public BodyData[] bodyOverrides = new BodyData[0];
+	public DecalData[] decalOverrides = new DecalData[0];
 }

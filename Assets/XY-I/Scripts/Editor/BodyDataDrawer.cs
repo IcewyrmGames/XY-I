@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer( typeof( OutfitData ) )]
-public class OutfitDataDrawer : PropertyDrawer
+[CustomPropertyDrawer( typeof( BodyData ) )]
+public class BodyDataDrawer : PropertyDrawer
 {
-	const float SLOT_WIDTH = 100f;
-	const float SPACING = 4f;
-
-	public override float GetPropertyHeight( SerializedProperty property, GUIContent label )
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{
-		return ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 3f;
+		return ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 2f;
 	}
 
 	public override void OnGUI( Rect position, SerializedProperty property, GUIContent label )
 	{
 		SerializedProperty slot = property.FindPropertyRelative( "slot" );
-		SerializedProperty outfit = property.FindPropertyRelative( "outfit" );
-		SerializedProperty colors = property.FindPropertyRelative( "colors" );
+		SerializedProperty sprite = property.FindPropertyRelative( "sprite" );
 
 		position = EditorGUI.IndentedRect( position );
 		int previousIndent = EditorGUI.indentLevel;
@@ -40,16 +36,9 @@ public class OutfitDataDrawer : PropertyDrawer
 			position.width,
 			position.height
 		);
-		Rect pos2 = new Rect(
-			position.x,
-			pos1.y + pos1.height + EditorGUIUtility.standardVerticalSpacing,
-			position.width,
-			position.height
-		);
 
 		EditorGUI.PropertyField( pos0, slot, GUIContent.none );
-		EditorGUI.PropertyField( pos1, outfit );
-		EditorGUI.PropertyField( pos2, colors );
+		EditorGUI.PropertyField( pos1, sprite );
 
 		EditorGUI.indentLevel = previousIndent;
 	}

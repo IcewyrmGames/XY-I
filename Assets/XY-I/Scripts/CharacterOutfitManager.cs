@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class CharacterOutfitManager : MonoBehaviour {
-	[System.Serializable]
-	public class OutfitData
-	{
-		public OutfitSlot slot;
-		public Outfit outfit;
-		public ColorMask colors = ColorMask.white;
-	}
-
+public class CharacterOutfitManager : MonoBehaviour
+{
 	[SerializeField] CharacterSlotManager _slotManager;
 
 	[SerializeField] OutfitData[] _outfits = new OutfitData[0];
@@ -51,7 +44,7 @@ public class CharacterOutfitManager : MonoBehaviour {
 		{
 			if( outfitData.outfit )
 			{
-				foreach( BodySlotData bodyData in outfitData.outfit.bodyOverrides )
+				foreach( BodyData bodyData in outfitData.outfit.bodyOverrides )
 				{
 					_slotManager.ApplyBodyData(
 						bodyData.slot,
@@ -59,7 +52,7 @@ public class CharacterOutfitManager : MonoBehaviour {
 						outfitData.colors
 					);
 				}
-				foreach( DecalSlotData decalData in outfitData.outfit.decalOverrides )
+				foreach( DecalData decalData in outfitData.outfit.decalOverrides )
 				{
 					_slotManager.ApplyDecalData(
 						decalData.slot,

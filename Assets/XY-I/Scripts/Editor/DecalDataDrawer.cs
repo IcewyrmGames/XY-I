@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer( typeof( BodySlotData ) )]
-[CustomPropertyDrawer( typeof( DecalSlotData ) )]
-public class SlotDataDrawer : PropertyDrawer
+[CustomPropertyDrawer( typeof( DecalData ) )]
+public class DecalDataDrawer : PropertyDrawer
 {
 	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{

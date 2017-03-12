@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomPropertyDrawer( typeof( CharacterSlotManager.Body ) )]
-[CustomPropertyDrawer( typeof( CharacterSlotManager.Decal ) )]
-public class CharacterInfoDrawer : PropertyDrawer
+[CustomPropertyDrawer( typeof( DecalRendererData ) )]
+public class DecalRendererDataDrawer : PropertyDrawer
 {
 	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{
-		return ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 2f;
+		return ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 4f;
 	}
 
 	public override void OnGUI( Rect position, SerializedProperty property, GUIContent label )

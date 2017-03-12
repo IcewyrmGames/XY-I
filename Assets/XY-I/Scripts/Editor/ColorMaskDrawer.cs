@@ -17,7 +17,6 @@ public class ColorMaskDrawer : PropertyDrawer
 	{
 		position = EditorGUI.PrefixLabel( position, label );
 
-		position.y += 2f; position.height = EditorGUIUtility.singleLineHeight;
 		float width = position.width / 3f;
 
 		Rect rectColorR = new Rect(

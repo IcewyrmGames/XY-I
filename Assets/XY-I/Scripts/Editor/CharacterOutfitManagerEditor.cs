@@ -17,7 +17,14 @@ public class CharacterOutfitManagerEditor : Editor
 			true, true, true, true
 		);
 
-		outfitDataArray.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused ) => {
+		outfitDataArray.elementHeightCallback = ( int index ) =>
+		{
+			SerializedProperty property = outfitDataArray.serializedProperty.GetArrayElementAtIndex( index );
+			return EditorGUI.GetPropertyHeight( property, GUIContent.none, false );
+		};
+
+		outfitDataArray.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused ) =>
+		{
 			SerializedProperty outfitData = outfitDataArray.serializedProperty.GetArrayElementAtIndex( index );
 
 			EditorGUI.BeginChangeCheck();

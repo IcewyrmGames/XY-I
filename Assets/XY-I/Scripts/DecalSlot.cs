@@ -6,10 +6,3 @@ using UnityEngine;
 public class DecalSlot : ScriptableObject
 {
 }
-
-[System.Serializable]
-public struct DecalSlotData
-{
-	public DecalSlot slot;
-	public Sprite sprite;
-}

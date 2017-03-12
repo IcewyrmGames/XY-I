@@ -8,7 +8,6 @@ using UnityEditorInternal;
 public class CharacterSlotManagerEditor : Editor
 {
 	static float FoldedElementHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2f;
-	static float UnfoldedElementHeight = EditorGUIUtility.singleLineHeight*4f + EditorGUIUtility.standardVerticalSpacing*5f;
 
 	static bool partsArrayUnfolded = false;
 	static bool decalsArrayUnfolded = false;
@@ -31,11 +30,27 @@ public class CharacterSlotManagerEditor : Editor
 
 		partsArray.elementHeightCallback = (int index) =>
 		{
-			return partsArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+			if( partsArrayUnfolded )
+			{
+				SerializedProperty property = partsArray.serializedProperty.GetArrayElementAtIndex( index );
+				return EditorGUI.GetPropertyHeight( property, GUIContent.none );
+			}
+			else
+			{
+				return FoldedElementHeight;
+			}
 		};
 		decalsArray.elementHeightCallback = (int index) =>
 		{
-			return decalsArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+			if( decalsArrayUnfolded )
+			{
+				SerializedProperty property = decalsArray.serializedProperty.GetArrayElementAtIndex( index );
+				return EditorGUI.GetPropertyHeight( property, GUIContent.none );
+			}
+			else
+			{
+				return FoldedElementHeight;
+			}
 		};
 
 		partsArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
@@ -54,7 +69,7 @@ public class CharacterSlotManagerEditor : Editor
 		decalsArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 		{
 			SerializedProperty property = decalsArray.serializedProperty.GetArrayElementAtIndex( index );
-			if( !partsArrayUnfolded )
+			if( !decalsArrayUnfolded )
 			{
 				rect.y += 2f; rect.height = EditorGUIUtility.singleLineHeight;
 				EditorGUI.PropertyField( rect, property.FindPropertyRelative( "slot" ), GUIContent.none );
