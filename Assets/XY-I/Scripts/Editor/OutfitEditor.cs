@@ -7,6 +7,7 @@ using UnityEditorInternal;
 [CustomEditor( typeof( Outfit ) )]
 public class OutfitEditor : Editor
 {
+	SerializedProperty slot;
 	ReorderableList bodyOverrideArray;
 	ReorderableList decalOverrideArray;
 
@@ -15,6 +16,8 @@ public class OutfitEditor : Editor
 
 	void OnEnable()
 	{
+		slot = serializedObject.FindProperty( "slot" );
+
 		bodyOverrideArray = new ReorderableList(
 			serializedObject,
 			serializedObject.FindProperty( "bodyOverrides" ),
@@ -64,6 +67,8 @@ public class OutfitEditor : Editor
 
 		using( var scope = new EditorGUI.DisabledGroupScope( EditorApplication.isPlayingOrWillChangePlaymode ) )
 		{
+			EditorGUILayout.PropertyField( slot );
+
 			EditorGUILayout.Separator();
 			bodyOverrideArray.DoLayoutList();
 
