@@ -7,14 +7,11 @@ using UnityEditorInternal;
 [CustomEditor( typeof( Outfit ) )]
 public class OutfitEditor : Editor
 {
-	static float FoldedElementHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2f;
-	static float UnfoldedElementHeight = SlotDataDrawer.HEIGHT + EditorGUIUtility.standardVerticalSpacing;
-
-	static bool bodyOverrideArrayUnfolded = false;
-	static bool decalOverrideArrayUnfolded = false;
-
 	ReorderableList bodyOverrideArray;
 	ReorderableList decalOverrideArray;
+
+	static GUIContent bodyOverrideArrayLabel = new GUIContent( "Body Part Overrides" );
+	static GUIContent decalOverrideArrayLabel = new GUIContent( "Decal Overrides" );
 
 	void OnEnable()
 	{
@@ -29,51 +26,35 @@ public class OutfitEditor : Editor
 			true, true, true, true
 		);
 
-		bodyOverrideArray.elementHeightCallback = (int index) =>
+		bodyOverrideArray.elementHeightCallback = ( int index ) =>
 		{
-			return bodyOverrideArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+			SerializedProperty property = bodyOverrideArray.serializedProperty.GetArrayElementAtIndex( index );
+			return EditorGUI.GetPropertyHeight( property, GUIContent.none, false );
 		};
-		decalOverrideArray.elementHeightCallback = (int index) =>
+		decalOverrideArray.elementHeightCallback = ( int index ) =>
 		{
-			return decalOverrideArrayUnfolded ? UnfoldedElementHeight : FoldedElementHeight;
+			SerializedProperty property = decalOverrideArray.serializedProperty.GetArrayElementAtIndex( index );
+			return EditorGUI.GetPropertyHeight( property, GUIContent.none, false );
 		};
 
 		bodyOverrideArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 		{
 			SerializedProperty property = bodyOverrideArray.serializedProperty.GetArrayElementAtIndex( index );
-			if( !bodyOverrideArrayUnfolded )
-			{
-				rect.y += 2f; rect.height = EditorGUIUtility.singleLineHeight;
-				EditorGUI.PropertyField( rect, property.FindPropertyRelative( "slot" ), GUIContent.none );
-			}
-			else
-			{
-				EditorGUI.PropertyField( rect, property, GUIContent.none );
-			}
+			EditorGUI.PropertyField( rect, property, GUIContent.none );
 		};
 		decalOverrideArray.drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 		{
 			SerializedProperty property = decalOverrideArray.serializedProperty.GetArrayElementAtIndex( index );
-			if( !decalOverrideArrayUnfolded )
-			{
-				rect.y += 2f; rect.height = EditorGUIUtility.singleLineHeight;
-				EditorGUI.PropertyField( rect, property.FindPropertyRelative( "slot" ), GUIContent.none );
-			}
-			else
-			{
-				EditorGUI.PropertyField( rect, property, GUIContent.none );
-			}
+			EditorGUI.PropertyField( rect, property, GUIContent.none );
 		};
 
-		bodyOverrideArray.drawHeaderCallback = (Rect rect) =>
+		bodyOverrideArray.drawHeaderCallback = ( Rect rect ) =>
 		{
-			rect.x += 10f;
-			bodyOverrideArrayUnfolded = EditorGUI.Foldout( rect, bodyOverrideArrayUnfolded, "Body Part Overrides", true );
+			EditorGUI.LabelField( rect, bodyOverrideArrayLabel );
 		};
-		decalOverrideArray.drawHeaderCallback = (Rect rect) =>
+		decalOverrideArray.drawHeaderCallback = ( Rect rect ) =>
 		{
-			rect.x += 10f;
-			decalOverrideArrayUnfolded = EditorGUI.Foldout( rect, decalOverrideArrayUnfolded, "Decal Overrides", true );
+			EditorGUI.LabelField( rect, decalOverrideArrayLabel );
 		};
 	}
 

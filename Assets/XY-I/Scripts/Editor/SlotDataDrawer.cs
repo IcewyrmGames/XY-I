@@ -7,11 +7,9 @@ using UnityEditor;
 [CustomPropertyDrawer( typeof( DecalSlotData ) )]
 public class SlotDataDrawer : PropertyDrawer
 {
-	public static float HEIGHT = ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 2f;
-
 	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{
-		return HEIGHT;
+		return ( EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing ) * 2f;
 	}
 
 	public override void OnGUI( Rect position, SerializedProperty property, GUIContent label )
