@@ -8,7 +8,7 @@ using UnityEditorInternal;
 public class OutfitEditor : Editor
 {
 	static float FoldedElementHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2f;
-	static float UnfoldedElementHeight = EditorGUIUtility.singleLineHeight*3f + EditorGUIUtility.standardVerticalSpacing*4f;
+	static float UnfoldedElementHeight = SlotDataDrawer.HEIGHT + EditorGUIUtility.standardVerticalSpacing;
 
 	static bool bodyOverrideArrayUnfolded = false;
 	static bool decalOverrideArrayUnfolded = false;
@@ -23,7 +23,6 @@ public class OutfitEditor : Editor
 			serializedObject.FindProperty( "bodyOverrides" ),
 			true, true, true, true
 		);
-
 		decalOverrideArray = new ReorderableList(
 			serializedObject,
 			serializedObject.FindProperty( "decalOverrides" ),

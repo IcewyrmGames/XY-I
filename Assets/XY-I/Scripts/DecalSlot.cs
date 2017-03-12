@@ -12,5 +12,4 @@ public struct DecalSlotData
 {
 	public DecalSlot slot;
 	public Sprite sprite;
-	public Color color;
 }

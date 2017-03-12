@@ -15,30 +15,10 @@ MonoBehaviour:
   bodyOverrides:
   - slot: {fileID: 11400000, guid: 13822fc6cf35642aab123e978d1050bf, type: 2}
     sprite: {fileID: 0}
-    color:
-      r: {r: 1, g: 1, b: 1, a: 1}
-      g: {r: 1, g: 1, b: 1, a: 1}
-      b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: e6cfabbbf0ff34a8c9247deedd3f8476, type: 2}
     sprite: {fileID: 0}
-    color:
-      r: {r: 1, g: 1, b: 1, a: 1}
-      g: {r: 1, g: 1, b: 1, a: 1}
-      b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 0c78f2ba7e4f140f99f9feffc795b2bb, type: 2}
     sprite: {fileID: 0}
-    color:
-      r: {r: 1, g: 1, b: 1, a: 1}
-      g: {r: 1, g: 1, b: 1, a: 1}
-      b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   - slot: {fileID: 11400000, guid: 2b92ccd94cd18467d93c8d2adf8d0d97, type: 2}
     sprite: {fileID: 0}
-    color:
-      r: {r: 1, g: 1, b: 1, a: 1}
-      g: {r: 1, g: 1, b: 1, a: 1}
-      b: {r: 1, g: 1, b: 1, a: 1}
-      a: {r: 1, g: 1, b: 1, a: 1}
   decalOverrides: []
